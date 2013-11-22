@@ -42,3 +42,8 @@ sub getProxyLog(){
 		$scpe->scp("root\@$proxy:$logfile");
 	}
 }
+
+sub getMcsLog(){
+	my $scpe = Net::SCP::Expect->new(host=>$server,user=>'admin',password=>'AAbbccddee11!!');
+	$scpe->scp("admin\@$server:/usr/local/avamar/var/mc/server_log/mcserver.log.0",'mcslogfile');
+}
